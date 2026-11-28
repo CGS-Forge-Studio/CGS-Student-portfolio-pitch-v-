@@ -1,0 +1,17 @@
+{
+  "name": "cgs-hub-student-portfolio",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "CGS HUB Student Portfolio — Next.js, NestJS, and PostgreSQL",
+  "scripts": {
+    "dev": "node scripts/portfolio.mjs",
+    "dev:web": "node scripts/portfolio.mjs",
+    "dev:api": "node scripts/dev.mjs api",
+    "build": "node scripts/dev.mjs build",
+    "db:up": "docker compose -f compose.yaml up -d postgres",
+    "db:push": "node scripts/dev.mjs db:push",
+    "db:seed": "node scripts/dev.mjs db:seed"
+  },
+  "devDependencies": {}
+}

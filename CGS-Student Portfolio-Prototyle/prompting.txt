@@ -1,0 +1,101 @@
+#1:
+You are a UI/UX designer. Build a complete, responsive frontend web application for the project **CGS HUB**, titled **Student Portfolio**.
+
+# Project: CGS HUB — Student Portfolio
+
+## 1. Branding & Identity
+- **Project Name:** `CGS HUB`
+- **Application Title:** `Student Portfolio`
+- Ensure `CGS HUB` and `Student Portfolio` are clearly reflected in the browser `<title>`, main navigation/header branding, and application shell in alignment with the sample design.
+
+---
+
+## 2. Workspace Inspection & Design Prerequisites
+Before writing any code, inspect the project directory at `D:\Users\visha\Music\Forge Studio\Student portfolio` and read all three reference files in full:
+1. `D:\Users\visha\Music\Forge Studio\Student portfolio\webapp design.html` — Use this file as your primary visual and structural sample design reference (layout hierarchy, component styling, surface treatments, visual polish, and UI patterns).
+2. `D:\Users\visha\Music\Forge Studio\Student portfolio\Design Rule.md` — Strictly enforce every design token, typography rule, color palette, spacing guideline, and UX constraint defined here alongside `webapp design.html`. Do not fall back to generic templates.
+3. `D:\Users\visha\Music\Forge Studio\Student portfolio\README.md` — Follow all project setup notes, architecture guidelines, and existing workspace conventions.
+4. Scan the directory for any existing files, `package.json`, or attendance data sources so you build seamlessly on top of the current workspace structure.
+
+---
+
+## 3. Core Application Scope (Frontend-Focused)
+Build the **CGS HUB — Student Portfolio** web application featuring a unified navigation layout faithful to `webapp design.html` and `Design Rule.md`, covering four core modules:
+
+### A. Attendance Record (Connected to Local Workspace)
+- Connect the Attendance Record module directly to the data/files inside `D:\Users\visha\Music\Forge Studio\Student portfolio`.
+- Inspect the directory for any existing attendance datasets (e.g., `.json`, `.csv`, `.xlsx`, `.db`, or existing API/config files). If no attendance dataset exists yet in that folder, create a structured attendance data file inside `D:\Users\visha\Music\Forge Studio\Student portfolio` and connect the frontend to read from it dynamically (using a lightweight local Node/Vite dev middleware or API route if needed so updates to the file reflect in the UI).
+- Display overall attendance percentage, subject-wise or monthly breakdowns, present/absent/late counts, and a clean visual attendance log/calendar.
+
+### B. Academic Record (10 Sample Entries)
+- Pre-populate the Academic Record view with **10 realistic, detailed sample records** covering core school subjects, terms/semesters, exam types (Midterms, Finals, Lab Practicals, Standardized Assessments), marks/grades, credits/weightage, and GPA/percentage trends.
+- Include filtering/sorting by term or subject and summary KPI cards (e.g., Cumulative GPA/Percentage, Highest Scoring Subject, Total Credits/Assessments).
+
+### C. Achievements Made (10 Sample Entries)
+- Pre-populate the Achievements section with **10 diverse, realistic student achievements** (e.g., science olympiads, hackathons, robotics/hardware competitions, research publications, sports, leadership roles, and certifications).
+- Each achievement card/entry should display the title, category badge, date, issuing organization, rank/award level, and a concise description. Include category filters (e.g., All, Academic, Technical, Extracurricular).
+
+### D. Digital Vault for Students (10 Sample Files + `+` Upload + 1 GB Quota)
+- Build an interactive **Digital Vault** where students store and organize study materials (notes, PDFs, lab reports, reference sheets, slides).
+- **Pre-populated Data:** Add **10 realistic sample study files** with varied file types (`.pdf`, `.docx`, `.pptx`, `.png`, `.xlsx`, `.md`), upload dates, subject tags, and realistic file sizes (e.g., totaling ~320–450 MB out of the 1 GB quota).
+- **Add File Action (`+` Button):** Include a prominent **`+` button** that opens a file picker/upload modal allowing the student to upload extra files from their device into the vault (with optional subject/category tagging, preview/download actions, and delete functionality).
+- **Strict 1 GB Storage Limit:**
+  - Enforce a hard maximum storage quota of **1 GB (1,024 MB)** per student across all files in the vault.
+  - Display a real-time storage usage bar and exact metrics (e.g., `412 MB / 1.00 GB used • 612 MB remaining`).
+  - Automatically recalculate used/remaining storage whenever files are added via the `+` button or deleted.
+  - Prevent uploads that would push total storage past 1 GB, showing a clear validation alert explaining the remaining space.
+
+---
+
+## 4. Technical & Execution Requirements
+- **Stack & Tooling:** Use standard `npm` workflows. If the workspace does not yet have a frontend scaffold initialized, set up a clean modern frontend project (e.g., React + Vite + TypeScript/JavaScript) in `D:\Users\visha\Music\Forge Studio\Student portfolio` while preserving `webapp design.html`, `Design Rule.md`, `README.md`, and any existing files.
+- **State Persistence:** Persist newly uploaded vault files (metadata/file blobs via `localStorage`/`IndexedDB` or a lightweight local dev endpoint) so user-added files and quota calculations survive page refreshes during development.
+- **Run & Verify with `npm`:**
+  1. Run `npm install` to install all required dependencies.
+  2. Start the application using `npm run dev` (and ensure any local attendance reader/server runs concurrently under `npm run dev` if a backend helper is used).
+  3. Verify there are zero TypeScript, build, or runtime console errors, and confirm that the branding (`CGS HUB` / `Student Portfolio`), the UI design (`webapp design.html` & `Design Rule.md`), all four modules, the 10 sample items per section, the `+` upload flow, the 1 GB storage cap, and the local attendance connection work end-to-end.
+
+
+#2:
+
+
+
+Changes: 1. The server should work on localhost, and not on http:. 
+2. Restructure the entire code file, and the architecture should be NestJS (Backend framework with TypeScript) + React/Next.js (Frontend) + PostgreSQL.
+
+
+#3:
+
+Changes:&#x20;
+
+1. The attendance log is calculated as per day not by each class/subject.
+2. Add a sign in page with continue with demo account in it.
+3. The Vault Space should show the values only in whole numbers not in real numbers with decimal points
+4. Fix the error in the server: " Error: Found another Vite dev process for this project at http\://127.0.0.1:5173/ (PID 24560).\
+   Pass --bypass-lock to bypass this check.\
+   &#x20;   at scanCommandLocks (file:///D:/Users/visha/Music/Forge%20Studio/Student%20portfolio/node_modules/vite/dist/node/cli.js:741:9).........................", remove the http completely from the dev server, use only local host
+
+#4:
+
+Changes: 
+1. For the attendance log, remove the Day Summary completely. Just keep the Status. The options for the status in attendance log--> present/absent/OD
+2. Remove the credits from the Assessment record.
+3. Remove the Open vault/ + Add a file from every page except the digital vault. 
+4. Remove the unwanted texts which are present at the very bottom of each page.
+5. Just use formal emojis.
+6. When the user clicks on the three dots present near the account, it should return a pop up whether the user is willing to log out.
+7. When the user clicks on the dates present on the calendar, it should return to their attendance record. Also make the user to switch months(previous to view their attendance)
+
+#5:
+
+Changes : 1. Remove the 'By subject' from the Attendance Section.
+2. Remove the '.YOUR LEARNING, IN ONE PLACE'.
+3. Remove the '.Term 2 · 2026–27' from the top right corner and don't add any stuffs in that place
+
+#6:
+
+
+Changes: 
+1. Remove the subject check-in from the dashboard.
+2. There are some UI errors. for example, the assigned color of OD is different from color of OD present in the Status.
+3. When the user clicks on the logo of their account, it should return a pop up with their account details including their username, class,  and section.
